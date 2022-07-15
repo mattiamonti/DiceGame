@@ -1,0 +1,27 @@
+
+.bottone {
+    width: 50vw;
+    height: 15vw;
+    border-radius: 25px;
+    border: 1px solid black;
+    font-family: Helvetica;
+    font-size: 5vw;
+    margin-top: 5vw;
+    margin-left: 25vw;
+}
+
+h1 {
+    font-family: Helvetica;
+    text-align: center;
+}
+
+p {
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 7vw;
+}
+
+p#feedback {
+    font-size: 5vw;
+}
+

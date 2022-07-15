@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="impostazioni.css">
         <script type="text/javascript">
             function resetSaldo() {
                 localStorage.setItem("saldo", "1000")
@@ -21,10 +22,12 @@
     </head>
     <body>
         <h1>Impostazioni</h1>
-        <button onclick="resetSaldo()">reset saldo</button>
-        <button onclick="unDado()">Gioca con un dado</button>
-        <button onclick="dueDadi()">Gioca con due dado</button>
+        <div class="listabottoni">
+        <button class="bottone" onclick="resetSaldo()">reset saldo</button>
+        <button class="bottone" onclick="unDado()">Gioca con un dado</button>
+        <button class="bottone" onclick="dueDadi()">Gioca con due dado</button>
         <p id="feedback"></p>
-        <a href="index.html">indietro</a>
+        <a href="index.html"><p>indietro</p></a>
+        </div>
     </body>
 </html>

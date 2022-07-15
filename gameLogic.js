@@ -1,4 +1,7 @@
 //localStorage.setItem('saldo', '10')
+
+
+
 function updateCheckbox() {
     updateImpostazioni()
     var numero = document.getElementById('numero').checked
@@ -47,7 +50,7 @@ function punta() {
         saldo = puntataDispari(numeroEstratto, saldo, importoGiocata)
     }
 
-    document.getElementById('estrazione').innerText = "numero estratto: " + numeroEstratto
+    document.getElementById('estrazione').innerText = numeroEstratto
 
     //document.getElementById('numero').checked = false
     //document.getElementById('pari').checked = false
@@ -64,6 +67,11 @@ function puntataNumero(numeroEstratto, saldo, importoGiocata) {
     document.getElementById('res').innerText = "hai scelto numero singolo " + numeroScelto
     if (checkWinningNumber(numeroScelto, numeroEstratto)) {
         saldo = saldo + (importoGiocata * 5)
+        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*5) + "!"
+        document.getElementById('esito').style.color = "#4EC815"
+    } else {
+        document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
+        document.getElementById('esito').style.color = "#FF6D6D"
     }
     return saldo
 }
@@ -73,6 +81,11 @@ function puntataPari(numeroEstratto, saldo, importoGiocata) {
     document.getElementById('res').innerText = "hai scelto pari"
     if (checkIfPari(numeroEstratto)) {
         saldo = saldo + (importoGiocata * 2)
+        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*2) + "!"
+        document.getElementById('esito').style.color = "#4EC815"
+    } else {
+        document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
+        document.getElementById('esito').style.color = "#FF6D6D"
     }
     return saldo
 }
@@ -82,6 +95,11 @@ function puntataDispari(numeroEstratto, saldo, importoGiocata) {
     document.getElementById('res').innerText = "hai scelto dispari"
     if (!checkIfPari(numeroEstratto)) {
         saldo = saldo + (importoGiocata * 2)
+        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*2) + "!"
+        document.getElementById('esito').style.color = "#4EC815"
+    } else {
+        document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
+        document.getElementById('esito').style.color = "#FF6D6D"
     }
     return saldo
 }
@@ -120,7 +138,7 @@ function checkWinningNumber(numeroScelto, numeroEstratto) {
 
 function displaySaldo() {
     var saldo = localStorage.getItem('saldo')
-    document.getElementById('displaySaldo').innerText = "Saldo: " + saldo.toString()
+    document.getElementById('displaySaldo').innerText = "$ " + saldo.toString()
 }
 
 function getImportoPuntata() {
