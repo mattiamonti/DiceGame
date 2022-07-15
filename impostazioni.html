@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function resetSaldo() {
+                localStorage.setItem("saldo", "1000")
+                document.getElementById("feedback").innerText = "modifiche effettuate! saldo = 1000"
+            }
+
+            function dueDadi() {
+                localStorage.setItem("modalitaGioco", "2")
+                document.getElementById("feedback").innerText = "modifiche effettuate! giochi con due dadi"
+            }
+
+            function unDado() {
+                localStorage.setItem("modalitaGioco", "1")
+                document.getElementById("feedback").innerText = "modifiche effettuate! giochi con un dado"
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Impostazioni</h1>
+        <button onclick="resetSaldo()">reset saldo</button>
+        <button onclick="unDado()">Gioca con un dado</button>
+        <button onclick="dueDadi()">Gioca con due dado</button>
+        <p id="feedback"></p>
+        <a href="index.html">indietro</a>
+    </body>
+</html>
