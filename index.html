@@ -4,6 +4,7 @@
 <head>
     <title>Dice Game</title>
     <script src="gameLogic.js"></script>
+    <link rel="stylesheet" href="style.css">
 
     <!-- meta tag for pwa -->
     <meta name="full-screen" content="yes">
@@ -15,22 +16,32 @@
 </head>
 
 <body>
-    <h1>Roulette Game</h1>
-    <a href="impostazioni.html" onclick="updateImpostazioni()">Impostazioni</a>
-    <h3 id="titoloPunta">Punta</h3>
-    <input type="checkbox" value="numero" id="numero" onclick="updateCheckbox()"><label>numero singolo</label>
-    <input type="checkbox" value="pari" id="pari" onclick="updateCheckbox()"><label>pari</label>
-    <input type="checkbox" value="dispari" id="dispari" onclick="updateCheckbox()"><label>dispari</label>
-    <br>
-    <label>Numero scelto:</label><input type="number" id="numeroScelto" placeholder="scegli numero">
-    <br>
-    <label>Importo giocata:</label><input type="number" id="importoGiocata" placeholder="inserisci importo" />
-    <br>
-    <button onclick="punta()">punta!</button>
+    <div class="container-titolo">
+        <h1><span class="primaparte">Dice</span> Game</h1>
+        <h2 id="displaySaldo">$ </h2>
+    </div>
 
-    <h3 id="res">operazione... </h3>
-    <h2 id="estrazione">numero estratto: </h2>
-    <h2 id="displaySaldo">Saldo: </h2>
+    <div class="container-puntata">
+        <h3 id="titoloPunta">Punta</h3>
+        <input type="checkbox" value="numero" id="numero" onclick="updateCheckbox()"><label>numero singolo</label>
+        <input type="checkbox" value="pari" id="pari" onclick="updateCheckbox()"><label>pari</label>
+        <input type="checkbox" value="dispari" id="dispari" onclick="updateCheckbox()"><label>dispari</label>
+        <br>
+        <label>Numero scelto:</label><input type="number" id="numeroScelto" placeholder="scegli numero">
+        <br>
+        <label>Importo giocata:</label><input type="number" id="importoGiocata" placeholder="inserisci importo" />
+        <br>
+        <button onclick="punta()">punta!</button>
+
+        <h3 id="res">operazione... </h3>
+    </div>
+
+    <div class="container-estrazione">
+        <h2>Numero Estratto</h2>
+        <h2 id="estrazione">8 </h2>
+        <a href="impostazioni.html" onclick="updateImpostazioni()">Impostazioni</a>
+    </div>
+
 
 </body>
 

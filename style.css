@@ -1,0 +1,76 @@
+body {
+    margin: 0;padding: 0;
+}
+/* titolo */
+.container-titolo {
+    background-color: white;
+    font-family: Helvetica;
+    font-size: 7vw;
+
+    border-radius: 20px;
+    height: 40vw;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
+
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+    padding-top: 0.5vw;
+    
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: -8vw;
+    font-weight: 600;
+    color: #FF6D6D;
+    
+}
+
+span.primaparte {
+    color: #4EC815;
+}
+
+#displaySaldo {
+    width: 90vw;
+    text-align: center;
+    font-weight: 400;
+    font-size: 8vw;
+    
+}
+
+
+/* menu puntata */
+
+.container-puntata {
+    background-color: white;
+    font-family: Helvetica;
+    font-size: 7vw;
+
+    border-radius: 20px;
+    height: 120vw;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
+
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+
+}
+
+
+/* estrazione */
+.container-estrazione {
+    background-color: white;
+    font-family: Helvetica;
+    font-size: 7vw;
+
+    border-radius: 20px;
+    height: 60vw;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
+
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+}
