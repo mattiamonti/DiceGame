@@ -51,7 +51,7 @@ span.primaparte {
     font-size: 5vw;
 
     border-radius: 20px;
-    height: 50vh;
+    height: 55vh;
     width: 90vw;
     margin-left: 5vw;
     margin-top: 5vw;
@@ -171,5 +171,7 @@ input[type='number'] {
 }
 
 .impostazioni {
+    width: 7vw;
+    height: 7vw;
     margin-left: 3vw;
 }

@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="impostazioni.css">
-        <script type="text/javascript">
-            function resetSaldo() {
-                localStorage.setItem("saldo", "1000")
-                document.getElementById("feedback").innerText = "modifiche effettuate! saldo = 1000"
-            }
 
-            function dueDadi() {
-                localStorage.setItem("modalitaGioco", "2")
-                document.getElementById("feedback").innerText = "modifiche effettuate! giochi con due dadi"
-            }
+<head>
+    <!-- meta tag for pwa -->
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Your App Name">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="impostazioni.css">
+    <script type="text/javascript">
+        function resetSaldo() {
+            localStorage.setItem("saldo", "1000")
+            document.getElementById("feedback").innerText = "modifiche effettuate! saldo = 1000"
+        }
 
-            function unDado() {
-                localStorage.setItem("modalitaGioco", "1")
-                document.getElementById("feedback").innerText = "modifiche effettuate! giochi con un dado"
-            }
-        </script>
+        function dueDadi() {
+            localStorage.setItem("modalitaGioco", "2")
+            document.getElementById("feedback").innerText = "modifiche effettuate! giochi con due dadi"
+        }
 
-    </head>
-    <body>
-        <h1>Impostazioni</h1>
-        <div class="listabottoni">
+        function unDado() {
+            localStorage.setItem("modalitaGioco", "1")
+            document.getElementById("feedback").innerText = "modifiche effettuate! giochi con un dado"
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Impostazioni</h1>
+    <div class="listabottoni">
         <button class="bottone" onclick="resetSaldo()">reset saldo</button>
         <button class="bottone" onclick="unDado()">Gioca con un dado</button>
         <button class="bottone" onclick="dueDadi()">Gioca con due dado</button>
         <p id="feedback"></p>
-        <a href="index.html"><p>indietro</p></a>
-        </div>
-    </body>
+        <a href="index.html">
+            <p>indietro</p>
+        </a>
+    </div>
+</body>
+
 </html>
