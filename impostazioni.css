@@ -26,3 +26,14 @@ p#feedback {
     font-size: 5vw;
 }
 
+#saldo-manuale, #password-manuale {
+    width: 50%;
+    height: 5vw;
+    font-size: 4vw;
+}
+
+.bot {
+    width: 25vw;
+    height: 7vw;
+    font-size: 3vw;
+}

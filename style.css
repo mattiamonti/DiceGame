@@ -173,5 +173,6 @@ input[type='number'] {
 .impostazioni {
     width: 7vw;
     height: 7vw;
-    margin-left: 3vw;
+    transform: scale(2);
+    margin-left: 7vw;
 }

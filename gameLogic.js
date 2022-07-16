@@ -59,15 +59,23 @@ function punta() {
     localStorage.setItem('saldo', saldo.toString())
     displaySaldo()
 
+
 }
 
 function puntataNumero(numeroEstratto, saldo, importoGiocata) {
+    var mod = localStorage.getItem('modalitaGioco')
+    var modalita = parseInt(mod)
     saldo = saldo - importoGiocata;
     var numeroScelto = document.getElementById('numeroScelto').value
     document.getElementById('res').innerText = "hai scelto numero singolo " + numeroScelto
     if (checkWinningNumber(numeroScelto, numeroEstratto)) {
-        saldo = saldo + (importoGiocata * 5)
-        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*5) + "!"
+        if (modalita == 2) {
+            saldo = saldo + (importoGiocata * 10)
+            document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata * 10) + "!"
+        } else {
+            saldo = saldo + (importoGiocata * 5)
+            document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata * 5) + "!"
+        }
         document.getElementById('esito').style.color = "#4EC815"
     } else {
         document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
@@ -81,7 +89,7 @@ function puntataPari(numeroEstratto, saldo, importoGiocata) {
     document.getElementById('res').innerText = "hai scelto pari"
     if (checkIfPari(numeroEstratto)) {
         saldo = saldo + (importoGiocata * 2)
-        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*2) + "!"
+        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata * 2) + "!"
         document.getElementById('esito').style.color = "#4EC815"
     } else {
         document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
@@ -95,7 +103,7 @@ function puntataDispari(numeroEstratto, saldo, importoGiocata) {
     document.getElementById('res').innerText = "hai scelto dispari"
     if (!checkIfPari(numeroEstratto)) {
         saldo = saldo + (importoGiocata * 2)
-        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata*2) + "!"
+        document.getElementById('esito').innerText = "Hai Vinto " + (importoGiocata * 2) + "!"
         document.getElementById('esito').style.color = "#4EC815"
     } else {
         document.getElementById('esito').innerText = "Hai Perso " + (importoGiocata) + "!"
@@ -122,7 +130,7 @@ function getRandomInt(min = 1, max) {
     let rand = Math.random();
 
     // multiply with difference 
-    rand = Math.floor( rand * difference);
+    rand = Math.floor(rand * difference);
 
     // add with min value 
     rand = rand + min;
@@ -143,32 +151,35 @@ function displaySaldo() {
 
 function getImportoPuntata() {
     var importo = document.getElementById('importoGiocata').value
+    //var imp = parseInt(importo)
+    if (importo == "") {
+        document.getElementById('res').innerText = "inserisci un importo per giocare!"
+        exit()
+    }
     return parseInt(importo)
 }
 
 function estraiNumero() {
     var mod = localStorage.getItem('modalitaGioco')
     var modalita = parseInt(mod)
-    
+
     if (modalita == 2) {
-        return getRandomInt(1,12)
+        return getRandomInt(1, 7) + getRandomInt(1, 7)
+    } else {
+        return getRandomInt(1, 7)
     }
-
-    return getRandomInt(1,6)
-
 }
 
 function updateImpostazioni() {
     var mod = localStorage.getItem('modalitaGioco')
     var modalita = parseInt(mod)
-    
+
     if (modalita == 2) {
-        document.getElementById('titoloPunta').innerText = "Punta su due dadi"
+        document.getElementById('numero-estratto').innerText = "Numero Estratto (2 dadi)"
     } else if (modalita == 1) {
-        document.getElementById('titoloPunta').innerText = "Punta su un dado"
+        document.getElementById('numero-estratto').innerText = "Numero Estratto (1 dado)"
     }
 }
-
 
 
 

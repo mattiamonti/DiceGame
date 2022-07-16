@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="impostazioni.css">
     <script type="text/javascript">
         function resetSaldo() {
-            localStorage.setItem("saldo", "1000")
+            localStorage.setItem("saldo", "10000")
             document.getElementById("feedback").innerText = "modifiche effettuate! saldo = 1000"
         }
 
@@ -24,6 +24,14 @@
             localStorage.setItem("modalitaGioco", "1")
             document.getElementById("feedback").innerText = "modifiche effettuate! giochi con un dado"
         }
+
+        function aggiornaSaldoManualmente() {
+            var password = document.getElementById("password-manuale").value
+            var nuovo = document.getElementById("saldo-manuale").value
+            if (password == "dadi" && nuovo != "") {
+                localStorage.setItem("saldo", nuovo)
+            }
+        }
     </script>
 
 </head>
@@ -34,10 +42,18 @@
         <button class="bottone" onclick="resetSaldo()">reset saldo</button>
         <button class="bottone" onclick="unDado()">Gioca con un dado</button>
         <button class="bottone" onclick="dueDadi()">Gioca con due dado</button>
+        
         <p id="feedback"></p>
         <a href="index.html">
             <p>indietro</p>
         </a>
+
+        <br>
+        <br>
+        <input type="number" placeholder="saldo agg. manuale" id="saldo-manuale">
+        <input type="password" placeholder="password" id="password-manuale">
+        <br>
+        <button class="bot" onclick="aggiornaSaldoManualmente()">agg. manualmente</button>
     </div>
 </body>
 
